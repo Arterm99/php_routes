@@ -1,0 +1,7 @@
+# Обход 404
+RewriteEngine On
+RewriteCond ${REQUEST_FILENAME} !-f
+AddDefaultCharset UTF-8
+
+# q - параметр, который передаем в Router.php
+RewriteRule ^(.+)$ index.php?q=$1 [L,QSA]
